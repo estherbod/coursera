@@ -12,6 +12,8 @@ section {
 	border-color: black;
 	border-style: solid;
 	position: relative;
+	float: left;
+	box-sizing: border-box;
 }
 
 section h2 {
@@ -41,4 +43,26 @@ section div {
 
 #section-title3 {
 	background-color: #F0E68C;
+}
+
+@media (min-width: 992px) {
+	section {
+		width: 33.33%;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+	.medium-1col {
+		width: 50%;
+	}
+
+	.medium-2col {
+		width: 100%;
+	}
+}
+
+@media (max-width: 767px) {
+	section{
+		width: 100%;
+	}
 }
