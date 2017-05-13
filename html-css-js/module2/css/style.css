@@ -1,5 +1,14 @@
 section {
 	background-color: #D3D3D3;
+	border-width: 1px;
+	border-color: black;
+	border-style: solid;
+}
+
+section h2 {
+	border-width: 1px;
+	border-color: black;
+	border-style: solid;
 }
 
 #section-title1 {
