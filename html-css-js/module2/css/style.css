@@ -2,6 +2,10 @@ body {
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif
 }
 
+h1 {
+	font-size: 1.75em;
+}
+
 section {
 	background-color: #D3D3D3;
 	border-width: 1px;
@@ -19,10 +23,12 @@ section h2 {
 	margin-top: -1px;
 	width: 150px;
 	text-align: center;
+	font-size: 1.25em;
 }
 
 section div {
 	clear: right;
+	font-size: 1em;
 }
 
 #section-title1 {
