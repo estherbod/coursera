@@ -18,13 +18,13 @@
              <p>Empty strings are not counted as lunch items</p>
              <input id="lunch-menu" type="text"
              placeholder="list comma separated dishes you usually have for lunch"
-             class="form-control" ng-model="menu">
+             class="form-control" ng-model="menu" style="border:3px solid {{color}}">
          </div>
          <div class="form-group">
              <button class="btn btn-default" ng-click="checkLunch();">Check If Too Much</button>
          </div>
          <div class="form-group message">
-           {{message}}
+           <font color={{color}}>{{message}}</font>
          </div>
    </div>
 

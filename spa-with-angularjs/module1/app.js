@@ -11,6 +11,7 @@ function LunchCheckController($scope) {
     var menu = $scope.menu
     if (!menu || 0 === menu.length) {
       $scope.message = "Please enter data first";
+      $scope.color = "red";
     }
     else {
       var items = menu.split(",").filter(isNotEmpty).length;
@@ -20,6 +21,7 @@ function LunchCheckController($scope) {
       else {
         $scope.message = "Too much!";
       }
+      $scope.color = "green";
     }
   }
 
