@@ -13,7 +13,7 @@ function LunchCheckController($scope) {
       $scope.message = "Please enter data first";
     }
     else {
-      var items = menu.split(",").length;
+      var items = menu.split(",").filter(isNotEmpty).length;
       if (items <= 3) {
         $scope.message = "Enjoy!";
       }
@@ -21,6 +21,10 @@ function LunchCheckController($scope) {
         $scope.message = "Too much!";
       }
     }
+  }
+
+  function isNotEmpty(string) {
+    return string.trim().length > 0;
   }
 };
 })();
