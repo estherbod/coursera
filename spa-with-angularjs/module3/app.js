@@ -10,6 +10,7 @@ function FoundItemsDirective() {
   var ddo = {
     templateUrl: 'foundItems.html',
     scope: {
+      message: "@",
       foundItems: '<'
     },
     restrict: 'E',
@@ -25,14 +26,28 @@ NarrowItDownController.$inject = ['MenuSearchService'];
 function NarrowItDownController(MenuSearchService) {
   var ctrl = this;
 
+  ctrl.message = "";
+
   ctrl.findItems = function () {
-    var promise = MenuSearchService.getMatchedMenuItems(ctrl.searchTerm);
-    promise.then(function (response) {
-      ctrl.foundItems = response;
-    })
-    .catch(function (error) {
-      console.log("Something went terribly wrong.");
-    });
+    if (ctrl.searchTerm === "") {
+      ctrl.message = "Nothing found";
+      ctrl.foundItems = [];
+    }
+    else {
+      var promise = MenuSearchService.getMatchedMenuItems(ctrl.searchTerm);
+      promise.then(function (response) {
+        ctrl.foundItems = response;
+        if (ctrl.foundItems.length == 0) {
+          ctrl.message = "Nothing found";
+        }
+        else {
+          ctrl.message = "";
+        }
+      })
+      .catch(function (error) {
+        console.log("Something went terribly wrong.");
+      });
+    }
   };
 }
 
