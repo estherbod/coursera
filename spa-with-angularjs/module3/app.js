@@ -11,7 +11,8 @@ function FoundItemsDirective() {
     templateUrl: 'foundItems.html',
     scope: {
       message: "@",
-      foundItems: '<'
+      foundItems: '<',
+      onRemove: '&'
     },
     restrict: 'E',
     controller: NarrowItDownController,
@@ -48,6 +49,10 @@ function NarrowItDownController(MenuSearchService) {
         console.log("Something went terribly wrong.");
       });
     }
+  };
+
+  ctrl.removeItem = function (index) {
+    ctrl.foundItems.splice(index, 1);
   };
 }
 
