@@ -3,7 +3,8 @@
 <h3>Our menu categories</h3>
 
 <ul>
-  <li ng-repeat="category in ctrl.categories">
+  <li ng-repeat="category in ctrl.categories"
+      ui-sref="items({categoryId: category.short_name})">
     ({{category.short_name}}) {{category.name}}
   </li>
 </ul>

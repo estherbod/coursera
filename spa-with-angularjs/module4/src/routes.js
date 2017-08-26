@@ -30,6 +30,18 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
        }]
      }
    })
+
+    // Items of one category
+    .state('items', {
+    url: '/items/{categoryId}',
+    templateUrl: 'src/templates/items.template.html',
+    controller: 'ItemsController as ctrl',
+    resolve: {
+       items: ['MenuDataService', '$stateParams', function (MenuDataService, $stateParams) {
+         return MenuDataService.getItemsForCategory($stateParams.categoryId);
+       }]
+     }
+  });
 }
 
 })();
