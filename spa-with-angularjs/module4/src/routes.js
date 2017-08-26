@@ -18,6 +18,18 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
     url: '/',
     templateUrl: 'src/templates/home.template.html'
   })
+
+  // Menu categories
+   .state('categories', {
+     url: '/categories',
+     templateUrl: 'src/templates/categories.template.html',
+     controller: 'CategoriesController as ctrl',
+     resolve: {
+       categories: ['MenuDataService', function (MenuDataService) {
+         return MenuDataService.getAllCategories();
+       }]
+     }
+   })
 }
 
 })();
