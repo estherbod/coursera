@@ -21,7 +21,10 @@ function RegistrationService(MenuService) {
   }
 
   service.getUser = function () {
-    return service.user;
+    return MenuService.getMenuItem(service.user.favorite_dish).then(function (response) {
+      service.user.favorite_dish = response;
+      return service.user;
+    })
   }
 }
 })();
