@@ -4,13 +4,20 @@
 angular.module('public')
 .service('RegistrationService', RegistrationService);
 
-RegistrationService.$inject = [];
-function RegistrationService() {
+RegistrationService.$inject = ['MenuService'];
+function RegistrationService(MenuService) {
   var service = this;
 
   service.save = function (user) {
-    service.user = user;
-    return "Your information has been saved."
+    return MenuService.menuItemExists(user.favorite_dish).then(function (response) {
+      if (response) {
+        service.user = user;
+        return "Your information has been saved.";
+      }
+      else {
+        return "No such menu number exists.";
+      }
+    })
   }
 }
 })();

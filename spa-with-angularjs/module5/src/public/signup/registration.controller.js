@@ -11,7 +11,9 @@ function RegistrationController(RegistrationService) {
   reg.message = "";
 
   reg.submit = function () {
-    reg.message = RegistrationService.save(reg.user);
+    RegistrationService.save(reg.user).then(function (response) {
+      reg.message = response;
+    });
   };
 }
 
