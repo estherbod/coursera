@@ -19,5 +19,9 @@ function RegistrationService(MenuService) {
       }
     })
   }
+
+  service.getUser = function () {
+    return service.user;
+  }
 }
 })();
