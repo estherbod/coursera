@@ -8,8 +8,10 @@ RegistrationController.$inject = ['RegistrationService'];
 function RegistrationController(RegistrationService) {
   var reg = this;
 
+  reg.message = "";
+
   reg.submit = function () {
-    RegistrationService.save(reg.user);
+    reg.message = RegistrationService.save(reg.user);
   };
 }
 

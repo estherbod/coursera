@@ -10,6 +10,7 @@ function RegistrationService() {
 
   service.save = function (user) {
     service.user = user;
+    return "Your information has been saved."
   }
 }
 })();
