@@ -1,3 +1,4 @@
+<div ng-show="{{info.user}}">
 <h2>Your information</h2>
 
 <span>First name: {{info.user.first_name}}</span>
@@ -12,3 +13,6 @@
 <img class="img-responsive" width="250" height="150" ng-src="{{info.basePath}}/images/{{info.user.favorite_dish.short_name}}.jpg" alt="{{info.user.favorite_dish.name}}">
 </div>
 
+<div ng-hide="{{info.user}}">
+<a ui-sref="public.signup">Not Signed Up Yet. Sign up now!</a>
+</div>
