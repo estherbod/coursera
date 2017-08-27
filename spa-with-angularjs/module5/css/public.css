@@ -182,4 +182,16 @@ h3.menu-item-title {
     float: left;
     width: 100%;
   }
+
+}
+
+
+/* Signup page */
+
+form > input {
+  color: #000000;
+}
+
+#signup-button {
+  color: #000000;
 }
